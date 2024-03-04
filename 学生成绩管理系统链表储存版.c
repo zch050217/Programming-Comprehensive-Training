@@ -8,11 +8,11 @@ struct student{
 	double cj[2];
 	struct student *next;
 }; 
-struct student *chuanjiang(struct student *h,struct student *pnew){//´´½¨ 
+struct student *chuanjiang(struct student *h,struct student *pnew){//åˆ›å»º 
 	static int k=1;
 	struct student *head;
 	head=(struct student*)malloc(sizeof(struct student));
-	printf("ÇëÊäÈëÊı¾İ");
+	printf("è¯·è¾“å…¥æ•°æ®");
 	scanf("%ld %s %lf %lf",&pnew->xh,pnew->xm,&pnew->cj[0],&pnew->cj[1]);
 	if(k==1){
 		pnew->next=NULL;
@@ -30,7 +30,7 @@ struct student *chuanjiang(struct student *h,struct student *pnew){//´´½¨
 	return head;
 }
 
-void tianjia(struct student *h,struct student *pnew,int v){//Ìí¼Ó 
+void tianjia(struct student *h,struct student *pnew,int v){//æ·»åŠ  
 	int j;
 	struct student *head=h;
 	for(j=1;j<v&&head;j++){
@@ -40,7 +40,7 @@ void tianjia(struct student *h,struct student *pnew,int v){//Ìí¼Ó
 	head->next=pnew;
 }
 
-void shanchu(struct student *h,int v){//É¾³ı 
+void shanchu(struct student *h,int v){//åˆ é™¤ 
 	int j;
 	struct student *head=h;
 	for(j=1;j<v&&head;j++){
@@ -48,7 +48,7 @@ void shanchu(struct student *h,int v){//É¾³ı
 	}
 	head->next=head->next->next;
 }
-void maopao(struct student *h,int v){//ÅÅĞò 
+void maopao(struct student *h,int v){//æ’åº 
 	int i,j;
 	struct student *head,*p,*q,*tmp;
 	head=(struct student*)malloc(sizeof(struct student));
@@ -99,7 +99,7 @@ void chaxun(struct student *h,struct student *p,int v){
 	double fs;
 	char cx[5]; 
 	if(v==1){
-		printf("ÇëÊäÈëÑ§ºÅ:");
+		printf("è¯·è¾“å…¥å­¦å·:");
 		scanf("%d",&n);
 		for(p=h->next;p!=NULL;p=p->next){
 			if(p->xh==n){
@@ -107,10 +107,10 @@ void chaxun(struct student *h,struct student *p,int v){
 				return;
 			}
 		}
-		printf("ÕÒ²»µ½¸ÃĞÅÏ¢\n");
+		printf("æ‰¾ä¸åˆ°è¯¥ä¿¡æ¯\n");
 	}
 	if(v==2){
-		printf("ÇëÊäÈëĞÕÃû:");
+		printf("è¯·è¾“å…¥å§“å:");
 		scanf("%s",cx);
 		for(p=h->next;p!=NULL;p=p->next){
 			if(strcmp(p->xm,cx)==0){
@@ -118,10 +118,10 @@ void chaxun(struct student *h,struct student *p,int v){
 				return;
 			}
 		}
-		printf("ÕÒ²»µ½¸ÃĞÅÏ¢\n");
+		printf("æ‰¾ä¸åˆ°è¯¥ä¿¡æ¯\n");
 	}
 	if(v==3){
-		printf("ÇëÊäÈë·ÖÊı£º");
+		printf("è¯·è¾“å…¥åˆ†æ•°ï¼š");
 		scanf("%lf",&fs);
 		for(p=h->next;p!=NULL;p=p->next){
 			if(p->cj[0]>=fs){
@@ -129,10 +129,10 @@ void chaxun(struct student *h,struct student *p,int v){
 			    count++;
 			}
 		}
-		printf("ÈËÊı%d\n",count);
+		printf("äººæ•°%d\n",count);
 	}
 	if(v==4){
-		printf("ÇëÊäÈë·ÖÊı£º");
+		printf("è¯·è¾“å…¥åˆ†æ•°ï¼š");
 		scanf("%lf",&fs);
 		for(p=h->next;p!=NULL;p=p->next){
 			if(p->cj[1]>=fs){
@@ -140,10 +140,10 @@ void chaxun(struct student *h,struct student *p,int v){
 			    count++;
 			}
 		}
-		printf("%ÈËÊıd\n",count);
+		printf("%äººæ•°d\n",count);
 	}
 	if(v==5){
-		printf("ÇëÊäÈë×Ü·Ö£º");
+		printf("è¯·è¾“å…¥æ€»åˆ†ï¼š");
 		scanf("%lf",&fs);
 		for(p=h->next;p!=NULL;p=p->next){
 			if(p->cj[1]+p->cj[0]>=fs){
@@ -151,14 +151,14 @@ void chaxun(struct student *h,struct student *p,int v){
 				count++;
 			}
 		}
-		printf("%ÈËÊıd\n",count);
+		printf("%äººæ•°d\n",count);
 	}
 }
 
 int main(){
 	struct student *h=NULL,*p1,*p2,*p;
 	int n,v;
-	printf("1£®ĞÂ½¨Êı¾İ\n2£®Ìí¼ÓÊı¾İ\n3£®É¾³ıÊı¾İ\n4£®ÅÅĞò\n5£®²éÑ¯\n6£®ÍË³öÆÁÄ»ÌáÊ¾£ºÇëÊäÈëĞòºÅÑ¡ÔñÏàÓ¦²Ù×÷:");
+	printf("1ï¼æ–°å»ºæ•°æ®\n2ï¼æ·»åŠ æ•°æ®\n3ï¼åˆ é™¤æ•°æ®\n4ï¼æ’åº\n5ï¼æŸ¥è¯¢\n6ï¼é€€å‡ºå±å¹•æç¤ºï¼šè¯·è¾“å…¥åºå·é€‰æ‹©ç›¸åº”æ“ä½œ:");
 	scanf("%d",&n);
 	while(n!=6){
 		if(n==1){
@@ -167,35 +167,35 @@ int main(){
 			zs++;
 		}
 		if(n==2){
-			printf("Ìí¼Óµ½µÚ¼¸Î»£¿");
+			printf("æ·»åŠ åˆ°ç¬¬å‡ ä½ï¼Ÿ");
 			scanf("%d",&v); 
 			p1=(struct student*)malloc(sizeof(struct student));
-			printf("ÇëÊäÈëÊı¾İ"); 
+			printf("è¯·è¾“å…¥æ•°æ®"); 
 			scanf("%ld %s %lf %lf",&p1->xh,p1->xm,&p1->cj[0],&p1->cj[1]);
 			tianjia(h,p1,v);
 			zs++;
 		}
 		if(n==3){
-			printf("É¾³ıµÚ¼¸Î»£¿");
+			printf("åˆ é™¤ç¬¬å‡ ä½ï¼Ÿ");
 			scanf("%d",&v); 
 			shanchu(h,v);
 			zs--;
 		}
 		if(n==4){
-			printf("1£®ÊıÑ§³É¼¨ÅÅĞò\n2£®³ÌĞòÉè¼Æ³É¼¨ÅÅĞò\n3£®×Ü·ÖÅÅĞò¡£\n4£®·µ»ØÖ÷²Ëµ¥\nÇë°´ĞòºÅÑ¡ÔñÏàÓ¦²Ù×÷:");
+			printf("1ï¼æ•°å­¦æˆç»©æ’åº\n2ï¼ç¨‹åºè®¾è®¡æˆç»©æ’åº\n3ï¼æ€»åˆ†æ’åºã€‚\n4ï¼è¿”å›ä¸»èœå•\nè¯·æŒ‰åºå·é€‰æ‹©ç›¸åº”æ“ä½œ:");
 			scanf("%d",&v);
 			if(v!=4){
 		      maopao(h,v);
 			} 
 		}
 		if(n==5){
-			printf("1£®Ñ§ºÅ²éÑ¯\n2£®ĞÕÃû²éÑ¯\n3£®ÊıÑ§³É¼¨²éÑ¯\n4£®³ÌĞòÉè¼Æ³É¼¨²éÑ¯\n5£®×Ü·Ö²éÑ¯\n6£®·µ»ØÖ÷²Ëµ¥\n°´ĞòºÅÑ¡ÔñÏàÓ¦²Ù×÷:");
+			printf("1ï¼å­¦å·æŸ¥è¯¢\n2ï¼å§“åæŸ¥è¯¢\n3ï¼æ•°å­¦æˆç»©æŸ¥è¯¢\n4ï¼ç¨‹åºè®¾è®¡æˆç»©æŸ¥è¯¢\n5ï¼æ€»åˆ†æŸ¥è¯¢\n6ï¼è¿”å›ä¸»èœå•\næŒ‰åºå·é€‰æ‹©ç›¸åº”æ“ä½œ:");
 			scanf("%d",&v);
 			if(v!=6){
 				chaxun(h,p,v); 
 			}
 		}
-		printf("1£®ĞÂ½¨Êı¾İ\n2£®Ìí¼ÓÊı¾İ\n3£®É¾³ıÊı¾İ\n4£®ÅÅĞò\n5£®²éÑ¯\n6£®ÍË³öÆÁÄ»ÌáÊ¾£ºÇëÊäÈëĞòºÅÑ¡ÔñÏàÓ¦²Ù×÷:");
+		printf("1ï¼æ–°å»ºæ•°æ®\n2ï¼æ·»åŠ æ•°æ®\n3ï¼åˆ é™¤æ•°æ®\n4ï¼æ’åº\n5ï¼æŸ¥è¯¢\n6ï¼é€€å‡ºå±å¹•æç¤ºï¼šè¯·è¾“å…¥åºå·é€‰æ‹©ç›¸åº”æ“ä½œ:");
 		scanf("%d",&n);
 	}
 }
